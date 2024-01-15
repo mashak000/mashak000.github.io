@@ -30,3 +30,12 @@ p{
 span{
     text-align: center;
 }
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    opacity: 50%;
+}
