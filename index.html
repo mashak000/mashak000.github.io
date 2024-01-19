@@ -6,40 +6,56 @@
         <script src="main.js" defer></script>
     </head>
     <body>
-        <h1>Your personal timer</h1>
-        <h3>We will count for you</h3>
+        <h1>YOUR PERSONAL TIMER</h1>
+        <h3>WE WILL COUNT FOR YOU!</h3>
 
-        <p>need to know more? click here <a href="info.html">🤔</a></p>
+        <p id="moreinfo"><i>need to know more? click here <a href="https://mashak000.github.io/info.html">🤔</a></i></p>
 
         <div class="form-wrapper">
             <form id="form" target="_blank" action="https://mashak000.github.io/timer.html">
-                <label for="NAME">Name of your event?</label>
-                <input type="text" name="NAME" id="NAME" value="Birth of Chihuahua">
-                <input type="date">
-                <label for="moods">What's your feeling about this upcoming event?</label>
-                <select name="moods">
-                    <option value="" disabled selected>Select your option</option>
-                    <option>Happy</option>
-                    <option>Mad</option>
-                    <option>Confused</option>
-                    <option>Horny</option>
-                </select>
-                <input type="submit" onclick="set_name()">
+                <div>
+                    <label for="NAME">Name of your upcoming event?</label>
+                    <input type="text" name="NAME" id="NAME" placeholder="Birth of Chihuahua" required>    
+                </div>
+                <div>
+                    <label>Date:</label>
+                    <input id="date" type="date" required>
+                </div>
+                <div>
+                    <label for="moods">What are your feelings about this event?    </label>
+                    <select id="moods" required>
+                        <option value="" disabled selected>Select👇</option>
+                        <option>Happy</option>
+                        <option>Mad</option>
+                        <option>Confused</option>
+                        <option>Horny</option>
+                    </select>
+                </div>
+                <div style = "text-align: center; padding-top: 0;">
+                    <input id="butt" type="submit" value="Send">
+                </div>
             </form>
-
-
-            
-
         </div>
+
         <script>
             const form = document.getElementById("form");
             const name = document.getElementById("NAME");
+            const date = document.getElementById("date");
+            const button = document.getElementById("form");
+            const moods = document.getElementById("moods");
 
             form.addEventListener("submit", function(){
                 
                 const nameValue = name.value;
 
+                const dateValue = date.value;
+                const moodsValue = moods.value;
+                console.log(moodsValue);
+
                 localStorage.setItem("nameEvent", nameValue);
+                localStorage.setItem("dateEvent", dateValue);
+                localStorage.setItem("moodEvent", moodsValue);
+    
             });
         </script>
     </body>

@@ -7,11 +7,77 @@
         <link rel="stylesheet" href="style.css">
         <script src="main.js" defer></script>
     </head>
-    <body>
+    <body >
+           
+        <h1 style="margin: 5rem;" id="NameOfEvent"></h1>
+        <h6 id="nostalgic"></h6>
+        <div id="mood1">
+            <img id="back"  src="/Users/masha/Desktop/fon.png"> 
+            <p id="mood">a</p>
+             
+             
+        </div>
+        <script>
+            
+            const card = document.getElementById("mood1");
+            
+            setTimeout(function fadeOutEffect() {
+                var fadeTarget = document.getElementById("mood1");
+                var fadeEffect = setInterval(function () {
+                    if (!fadeTarget.style.opacity) {
+                        fadeTarget.style.opacity = 1;
+                    }
+                    if (fadeTarget.style.opacity > 0) {
+                        fadeTarget.style.opacity -= 0.05;
+                    } else {
+                        clearInterval(fadeEffect);
+                    }
+                }, 40);
+                
+                
+            }, 2000)
         
-        <h1 id="NameOfEvent"></h1>
+            
+
+            
+        </script>
+
+        <img id ="bbb">
+        <script>
+            (function () {
+                var viewFullScreen = document.getElementById("logo");
+                var isFullScreen;
+            
+                if(viewFullScreen) {
+                    viewFullScreen.addEventListener("click", function () {
+            
+                        if(!isFullScreen) {
+    
+                            var docElm = document.documentElement;
+                            if(docElm.requestFullscreen) docElm.requestFullscreen();
+                            else if(docElm.msRequestFullscreen) docElm.msRequestFullscreen();
+                            else if(docElm.mozRequestFullScreen) docElm.mozRequestFullScreen();
+                            else if(docElm.webkitRequestFullScreen) docElm.webkitRequestFullScreen();
+    
+                            isFullScreen = true;
+    
+                        } else {
+    
+                            if(document.exitFullscreen) document.exitFullscreen();
+                            else if(document.msExitFullscreen) document.msExitFullscreen();
+                            else if(document.mozCancelFullScreen) document.mozCancelFullScreen();
+                            else if(document.webkitCancelFullScreen) document.webkitCancelFullScreen();
+    
+                            isFullScreen = false;
+                        }
+    
+                    }, false);
+                }
+            })();
+            </script>
 
         <div class="timer-wrapper">
+            
             <div>
                 <p id="days">0</p>
                 <span>days</span>
@@ -28,12 +94,21 @@
                 <p id="secs">0</p>
                 <span>seconds</span>
             </div>
+            
         </div>
+        
+        
+
 
         <script>
             const nameEvent = localStorage.getItem("nameEvent");
 
             document.getElementById("NameOfEvent").textContent = nameEvent;
+            let today =  new Date().getTime();
+            let theDate = new Date(localStorage.getItem("dateEvent"));
+            if (theDate < today) {
+                document.getElementById("nostalgic").textContent = "WOW you are nostalgic...";
+            };    
         </script>
     </body>
 </html>
