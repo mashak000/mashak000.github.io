@@ -64,7 +64,7 @@
 
             function fieldsLists(name){
                 const n = name;
-                fetch('http://api.valantis.store:40000/', {
+                fetch('https://api.valantis.store:41000/', {
                     method: 'POST', 
                     headers: {
                         'Content-Type': 'application/json',
@@ -109,7 +109,7 @@
             // get length of whole array
             function lengthofids(action, param, field) {
                 if (param == 'None'){
-                    return fetch('http://api.valantis.store:40000/', {
+                    return fetch('https://api.valantis.store:41000/', {
                         method: 'POST', 
                         headers: {
                             'Content-Type': 'application/json',
@@ -138,7 +138,7 @@
                     
                 } else {
                     if (field == 'price'){
-                        return fetch('http://api.valantis.store:40000/', {
+                        return fetch('https://api.valantis.store:41000/', {
                             method: 'POST', 
                             headers: {
                                 'Content-Type': 'application/json',
@@ -166,7 +166,7 @@
 
                         })
                     } else if (field == 'product'){
-                        return fetch('http://api.valantis.store:40000/', {
+                        return fetch('https://api.valantis.store:41000/', {
                             method: 'POST', 
                             headers: {
                                 'Content-Type': 'application/json',
@@ -194,7 +194,7 @@
 
                         })
                     } else if (field == 'brand'){
-                        return fetch('http://api.valantis.store:40000/', {
+                        return fetch('https://api.valantis.store:41000/', {
                             method: 'POST', 
                             headers: {
                                 'Content-Type': 'application/json',
@@ -229,7 +229,7 @@
             function getItems (limit, off){
                 loader.style.display = 'block';
                 let unique = [];
-                fetch('http://api.valantis.store:40000/', {
+                fetch('https://api.valantis.store:41000/', {
                     method: 'POST', 
                     headers: {
                         'Content-Type': 'application/json',
@@ -247,7 +247,7 @@
                     const allids = tovari.result;
                     const maindiv = document.getElementById("items");
                     maindiv.innerHTML = "";
-                    fetch('http://api.valantis.store:40000/', {
+                    fetch('https://api.valantis.store:41000/', {
                     method: 'POST', 
                     headers: {
                         'Content-Type': 'application/json',
@@ -310,7 +310,7 @@
                 const maindiv = document.getElementById("items");
                 maindiv.innerHTML = "";
                 let uni = [];
-                fetch('http://api.valantis.store:40000/', {
+                fetch('https://api.valantis.store:41000/', {
                 method: 'POST', 
                 headers: {
                     'Content-Type': 'application/json',
