@@ -1,0 +1,75 @@
+body{
+    margin: 10px;
+}
+
+.tovar{
+    border: 1px solid black;
+    background-color: wheat;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10pt;
+}
+
+#pagenumbers{
+    display: flex;
+    max-width: 500px;
+    overflow: scroll;
+}
+
+.active{
+    background-color: blue;
+}
+
+#loader{
+    width: 98%;
+    height: 100%;
+    background-color: green;
+    display: block;
+    position: fixed;
+    text-align: center;
+    padding-top: 100px;
+    border-radius: 30pt;
+    margin-top: 20px;
+}
+
+@keyframes glow{
+    0%{
+        opacity: 100%;
+    }
+    50%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
+#loader-text{
+    color: white;
+    animation-name: glow;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+#pricefilter{
+    display: none;
+}
+
+#filters{
+    display: flex;
+    margin-top: 50px;
+    margin-left: 40px;
+}
+
+.select{
+    margin-left: 20px;;
+}
+
+.header{
+    text-align: center;
+    margin: 40px;
+}
+
+nav{
+    margin-left: 20px;
+}
